@@ -1,51 +1,19 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
+import {Provider} from 'react-redux';
+import Navigation from './src/navigation/Navigation';
+import {store} from './src/store/store';
+import {PersistGate} from 'redux-persist/integration/react';
+import {persistStore} from 'redux-persist';
 
-import React, {useState} from 'react';
-import {StyleSheet, Text, TextInput, View} from 'react-native';
+const persistor = persistStore(store);
 
 const App = () => {
-  const [text, setText] = useState('');
   return (
-    <View style={styles.sectionContainer}>
-      <Text>Input:</Text>
-      <TextInput
-        style={{borderWidth: 1, borderColor: 'gray', width: '80%', padding: 10}}
-        value={text}
-        onChangeText={value => {
-          setText(value);
-        }}
-      />
-    </View>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <Navigation />
+      </PersistGate>
+    </Provider>
   );
 };
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100%',
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;

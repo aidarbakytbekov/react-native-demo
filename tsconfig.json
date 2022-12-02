@@ -2,9 +2,13 @@
 {
   "extends": "@tsconfig/react-native/tsconfig.json",     /* Recommended React Native TSConfig base */
   "compilerOptions": {
-    /* Visit https://aka.ms/tsconfig.json to read more about this file */
-
-    /* Completeness */
+    "allowSyntheticDefaultImports": true,
+		"strict": true,
+		"baseUrl": ".",
+    "noImplicitAny": false,
+		"paths": {
+			"@/*": ["./src/*"]
+		},
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   }
 }
