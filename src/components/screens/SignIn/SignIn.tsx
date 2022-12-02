@@ -77,6 +77,7 @@ const SignIn: FC = () => {
                 </View>
                 <Pressable style={styles.btn}>
                   <Button
+                    testID="loginButton"
                     onPress={handleSubmit}
                     disabled={!isValid}
                     title="Login"
