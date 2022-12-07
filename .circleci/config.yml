@@ -11,5 +11,5 @@ jobs:
       - run:
           name: Linting files
           command: |
-            yarn lint
-            yarn typescript
+            tsc
+            eslint . --ext .js,.jsx,.ts,.tsx
