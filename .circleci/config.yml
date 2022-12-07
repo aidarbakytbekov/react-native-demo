@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  Using-Node:
+  build:
     docker:
       - image: cimg/node:17.2
         auth:
