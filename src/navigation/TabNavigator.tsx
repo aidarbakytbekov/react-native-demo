@@ -5,7 +5,6 @@ import ProfileStack from './ProfileStack';
 const BottomTabNavigator = createBottomTabNavigator();
 
 export default function TabNavigator() {
-  console.log('first');
   return (
     <BottomTabNavigator.Navigator>
       <BottomTabNavigator.Screen
