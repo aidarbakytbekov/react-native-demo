@@ -16,3 +16,4 @@ jobs:
           name: Linting
           command: |
             yarn lint
+            yarn typescript
