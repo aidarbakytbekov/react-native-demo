@@ -7,11 +7,6 @@ jobs:
           username: aidarionov
           password: $DOCKERHUB_PASSWORD # context / project UI env-var reference
     steps:
-      - checkout
-      - run:
-          name: Running the Node Container
-          command: |
-            yarn install
       - run:
           name: Linting
           command: |
