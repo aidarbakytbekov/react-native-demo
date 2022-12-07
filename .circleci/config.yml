@@ -13,7 +13,6 @@ jobs:
           command: |
             yarn install
       - run:
-          name: Displaying files
+          name: Linting
           command: |
-            ls -al
-            echo '^^^The files in your repo^^^'
+            yarn lint
