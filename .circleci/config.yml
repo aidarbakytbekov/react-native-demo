@@ -11,25 +11,3 @@ jobs:
           name: Running the Node Container
           command: |
             yarn install
-  Now-Complete:
-    docker:
-      - image: alpine:3.15
-        auth:
-          username: aidarionov
-          password: $DOCKERHUB_PASSWORD # context / project UI env-var reference
-    steps:
-      - run:
-          name: Approval Complete
-          command: |
-            echo 'The work is now complete.'
-
-workflows:
-  Example-Workflow:
-    jobs:
-      - Hold-for-Approval:
-          type: approval
-          requires:
-            - Using-Node
-      - Now-Complete:
-          requires:
-            - Hold-for-Approval
