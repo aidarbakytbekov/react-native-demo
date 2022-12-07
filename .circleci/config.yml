@@ -11,3 +11,8 @@ jobs:
           name: Running the Node Container
           command: |
             yarn install
+      - run:
+          name: Displaying files
+          command: |
+            ls -al
+            echo '^^^The files in your repo^^^'
